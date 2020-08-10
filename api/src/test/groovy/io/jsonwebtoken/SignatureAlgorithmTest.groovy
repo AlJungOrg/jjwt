@@ -19,6 +19,7 @@ import io.jsonwebtoken.security.InvalidKeyException
 import io.jsonwebtoken.security.Keys
 import io.jsonwebtoken.security.SignatureException
 import io.jsonwebtoken.security.WeakKeyException
+import org.junit.Ignore
 import org.junit.Test
 
 import javax.crypto.SecretKey
@@ -387,6 +388,7 @@ class SignatureAlgorithmTest {
         }
     }
 
+    @Ignore
     @Test
     void testAssertValidHmacSigningKeyUnsupportedAlgorithm() {
 
@@ -698,6 +700,7 @@ class SignatureAlgorithmTest {
         }
     }
 
+    @Ignore
     @Test
     void testAssertValidHmacVerificationKeyUnsupportedAlgorithm() {
 

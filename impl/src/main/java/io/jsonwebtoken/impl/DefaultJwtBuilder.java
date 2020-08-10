@@ -30,6 +30,7 @@ import io.jsonwebtoken.io.Encoder;
 import io.jsonwebtoken.io.Encoders;
 import io.jsonwebtoken.io.SerializationException;
 import io.jsonwebtoken.io.Serializer;
+import io.jsonwebtoken.jackson.io.JacksonSerializer;
 import io.jsonwebtoken.lang.Assert;
 import io.jsonwebtoken.lang.Collections;
 import io.jsonwebtoken.lang.Strings;
@@ -297,7 +298,8 @@ public class DefaultJwtBuilder implements JwtBuilder {
             // try to find one based on the services available
             // TODO: This util class will throw a UnavailableImplementationException here to retain behavior of previous version, remove in v1.0
             // use the previous commented out line instead
-            this.serializer = LegacyServices.loadFirst(Serializer.class);
+            // this.serializer = LegacyServices.loadFirst(Serializer.class);
+            this.serializer = new JacksonSerializer();
         }
 
         if (payload == null && Collections.isEmpty(claims)) {
